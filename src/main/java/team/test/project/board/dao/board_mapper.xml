@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+>
+
+<mapper namespace="team.test.project.board.dao.BoardDAO">
+
+	<select id="list" resultType="team.test.project.board.dto.BoardDTO">
+select(	select count(new_filename) from photo p where p.idx = b.idx) as img_cnt,
+b.idx,
+b.subject,
+b.bHit,
+b.reg_date
+from  bbs b order by idx desc limit #{param1} offset #{param2}
+	</select>
+
+	<select id="allCount" resultType="Integer">
+		SELECT CEIL(count(idx)/#{param1}) as pages From bbs
+	</select>
+
+	<select id="getFiles" resultType="String">
+		SELECT new_filename FROM photo WHERE idx = #{param1}
+	</select>
+	
+	<delete id="del" parameterType="String">
+		DELETE FROM bbs WHERE idx = #{idx}
+	</delete>
+
+</mapper>
