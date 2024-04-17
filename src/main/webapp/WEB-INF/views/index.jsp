@@ -9,7 +9,9 @@
 </style>
 </head>
 <body>
-
+	<h3>commit한 내용을 취소하고 싶다면</h3>
+	<p>1.브렌치(branch) 초기화</p>
+	<p>2.reverse commit</p>
 </body>
 <script>
 </script>
