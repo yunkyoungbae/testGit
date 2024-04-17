@@ -15,6 +15,7 @@
 	<p>불필요한 내용</p>
 	<button onclick ="test()">클릭해주세요</button>
 	asdasdsadsadsasdasda
+	아무거나2
 </body>
 <script>
 	var arr = [];
